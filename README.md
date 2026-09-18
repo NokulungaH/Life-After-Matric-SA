@@ -2,40 +2,47 @@
 
 A practical, mobile-first life-skills website for young South Africans navigating work, salaries, tax, money and adulthood after matric or university.
 
-## Current release
+## Build status
 
-- Life-stage based homepage
-- Jobs and application guidance
-- First-job checklist saved in the browser
-- 2026/27 South African salary / PAYE / UIF estimator
-- Job application tracker saved in localStorage
-- Personal roadmap covering future modules
-- Responsive navigation and mobile layout
+All 10 planned phases now have dedicated site sections and pages:
 
-## Planned modules
+1. ✅ Site architecture & navigation
+2. ✅ Jobs & first job
+3. ✅ Salary & payslips
+4. ✅ SARS & tax
+5. ✅ Money
+6. ✅ Moving out
+7. ✅ Cars
+8. ✅ Education & career
+9. ✅ Business & side hustles
+10. ✅ Adulting admin
 
-1. Jobs & first salary
-2. SARS & tax
-3. Money
-4. Moving out
-5. Cars
-6. Education & career
-7. Business & side hustles
-8. Adulting admin
+The site currently contains 60 HTML pages including the homepage, topic hubs and focused guides.
+
+## Interactive tools
+
+- South African salary / PAYE / UIF estimator
+- Monthly budget calculator
+- Emergency-fund target calculator
+- Moving-out affordability calculator
+- Car finance and ownership-cost calculator
+- Business profit and break-even calculator
+
+All tools run in the browser. User-entered values are not stored.
+
+## Navigation
+
+Every main topic has its own hub. Larger sections use sub-navigation plus previous/next links. Desktop and mobile navigation share the same page structure.
 
 ## Tech
 
-Plain HTML, CSS and JavaScript so the site can run entirely on GitHub Pages. No account or backend is required for the current features.
+Plain HTML, CSS and JavaScript so the site can run entirely on GitHub Pages with no backend or user accounts.
 
 ## Accuracy
 
-Time-sensitive values such as tax brackets must show the applicable tax year and should be reviewed against official South African sources before each annual update.
+Time-sensitive values such as tax brackets, government funding criteria and filing rules should always display the applicable period and be reviewed against official South African sources before annual updates.
 
-Current salary estimator: **2027 tax year (1 March 2026–28 February 2027)**.
-
-Official references:
-- SARS individual tax rates: https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/
-- SARS UIF: https://www.sars.gov.za/types-of-tax/unemployment-insurance-fund/
+Current salary estimator basis: **2027 tax year (1 March 2026–28 February 2027)**.
 
 ## Disclaimer
 
