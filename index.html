@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Life After Matric SA helps young South Africans understand jobs, salaries, tax, money and adult life.">
+  <title>Life After Matric SA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="Life After Matric SA home">
+    <span class="brand-mark">LA</span><span>Life After Matric <b>SA</b></span>
+  </a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <nav id="mainNav">
+    <a href="#start">Start here</a><a href="#jobs">Jobs</a><a href="#salary">Salary</a><a href="#tracker">Tracker</a><a href="#roadmap">My roadmap</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div>
+    <span class="eyebrow">Practical life skills for South Africans</span>
+    <h1>Life after school doesn’t come with instructions.</h1>
+    <p class="hero-copy">We’re fixing that. Learn how salaries work, find a job, understand SARS, manage money, move out, buy a car and figure adulthood out — one step at a time.</p>
+    <div class="actions"><a class="btn primary" href="#start">Show me where to start</a><a class="btn ghost" href="#salary">Try the salary calculator</a></div>
+    <div class="trust"><span>🇿🇦 Built for South Africa</span><span>🔒 No account required</span><span>💾 Progress stays on your device</span></div>
+  </div>
+  <aside class="hero-card">
+    <p class="mini-label">Your first-job reality check</p>
+    <h2>R20 000 salary ≠ R20 000 in your bank.</h2>
+    <p>PAYE, UIF and other deductions can change your take-home pay. We explain each line in plain English.</p>
+    <a href="#salary">Calculate your take-home →</a>
+  </aside>
+</section>
+
+<section class="section" id="start">
+  <div class="section-head"><span class="eyebrow">Start with your situation</span><h2>Where are you right now?</h2><p>You do not need to read this site from beginning to end. Pick what sounds most like you.</p></div>
+  <div class="journey-grid">
+    <button class="journey" data-go="jobs"><span>🎓</span><b>I just finished matric</b><small>Options, applications and next steps</small></button>
+    <button class="journey" data-go="jobs"><span>🎓</span><b>I just graduated</b><small>Turn the qualification into opportunities</small></button>
+    <button class="journey" data-go="jobs"><span>🔎</span><b>I’m looking for work</b><small>CVs, applications, interviews and scams</small></button>
+    <button class="journey" data-go="salary"><span>💼</span><b>I got my first job</b><small>Contracts, payslips, PAYE and UIF</small></button>
+    <button class="journey" data-go="roadmap"><span>💰</span><b>I want to understand money</b><small>Budgeting, credit and saving</small></button>
+    <button class="journey" data-go="roadmap"><span>🏠</span><b>I want to move out</b><small>Rent, deposits and living costs</small></button>
+    <button class="journey" data-go="roadmap"><span>🚗</span><b>I want to buy a car</b><small>Finance, insurance and real ownership cost</small></button>
+    <button class="journey" data-go="roadmap"><span>🧭</span><b>I have no idea what I’m doing</b><small>That’s a valid place to start</small></button>
+  </div>
+</section>
+
+<section class="section alt" id="jobs">
+  <div class="section-head"><span class="eyebrow">Jobs & applications</span><h2>Getting into the working world</h2><p>Practical steps, not “just network” advice.</p></div>
+  <div class="feature-grid">
+    <article class="feature"><span>📄</span><h3>Build a strong CV</h3><p>Keep it clear, tailored and easy to scan. Lead with relevant skills, projects, qualifications and measurable outcomes.</p><ul><li>Use a professional email address</li><li>Tailor keywords to the job advert</li><li>Do not include unnecessary personal details</li><li>Proofread names, dates and contact details</li></ul></article>
+    <article class="feature"><span>📨</span><h3>Apply strategically</h3><p>Quality matters more than firing the same CV everywhere.</p><ul><li>Save the job description</li><li>Track the date and role</li><li>Follow instructions exactly</li><li>Follow up politely when appropriate</li></ul></article>
+    <article class="feature"><span>🎤</span><h3>Prepare for interviews</h3><p>Know your examples before you walk in.</p><ul><li>Prepare a 60-second introduction</li><li>Use STAR for experience questions</li><li>Research the company</li><li>Prepare two thoughtful questions</li></ul></article>
+    <article class="feature warning"><span>🚨</span><h3>Spot job scams</h3><p>Be suspicious if a “recruiter” pressures you to pay for a job, sends vague offers, or asks for sensitive information too early.</p><p class="note">A legitimate hiring process should be verifiable. Pause and verify the company independently before sharing documents or money.</p></article>
+  </div>
+  <div class="check-card">
+    <div><span class="eyebrow">First-job checklist</span><h3>Before your first day</h3></div>
+    <div id="jobChecklist" class="checklist"></div>
+    <p class="progress-text"><span id="checkProgress">0</span>% complete</p>
+  </div>
+</section>
+
+<section class="section" id="salary">
+  <div class="section-head"><span class="eyebrow">Salary & payslips</span><h2>What will actually reach your bank account?</h2><p>This estimator uses the South African 2027 tax year (1 March 2026–28 February 2027) individual tax brackets and primary rebate. It is an educational estimate, not payroll or tax advice.</p></div>
+  <div class="calc-wrap">
+    <form id="salaryForm" class="calc-card">
+      <label>Gross monthly salary (R)<input id="grossSalary" type="number" min="0" step="100" value="20000" required></label>
+      <label>Retirement contribution (%)<input id="retirementPct" type="number" min="0" max="27.5" step="0.5" value="0"></label>
+      <label>Other monthly deductions (R)<input id="otherDeductions" type="number" min="0" step="50" value="0"></label>
+      <button class="btn primary" type="submit">Calculate take-home pay</button>
+      <p class="fine">Simplified calculation for a person under 65. Medical tax credits, fringe benefits, allowances and other tax circumstances are not included.</p>
+    </form>
+    <div class="result-card" aria-live="polite">
+      <p class="mini-label">Estimated monthly take-home</p>
+      <div class="big-number" id="netPay">R0</div>
+      <div class="money-row"><span>Gross salary</span><b id="grossOut">R0</b></div>
+      <div class="money-row"><span>Estimated PAYE</span><b id="payeOut">R0</b></div>
+      <div class="money-row"><span>Employee UIF</span><b id="uifOut">R0</b></div>
+      <div class="money-row"><span>Retirement contribution</span><b id="retirementOut">R0</b></div>
+      <div class="money-row"><span>Other deductions</span><b id="otherOut">R0</b></div>
+      <div class="explain" id="salaryExplain"></div>
+    </div>
+  </div>
+  <div class="term-grid">
+    <article><b>Gross salary</b><p>Your pay before deductions.</p></article>
+    <article><b>PAYE</b><p>Employees’ tax your employer withholds and pays to SARS.</p></article>
+    <article><b>UIF</b><p>Most employees contribute 1% of remuneration, subject to the UIF earnings ceiling.</p></article>
+    <article><b>Net pay</b><p>What remains after the deductions included in this estimate.</p></article>
+  </div>
+  <p class="source-note">Official references: <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener">SARS individual tax rates</a> · <a href="https://www.sars.gov.za/types-of-tax/unemployment-insurance-fund/" target="_blank" rel="noopener">SARS UIF</a>. Last content review: September 2026.</p>
+</section>
+
+<section class="section alt" id="tracker">
+  <div class="section-head"><span class="eyebrow">Job application tracker</span><h2>Stop wondering, “Did I apply for that already?”</h2><p>Your entries are stored only in this browser unless you export them yourself.</p></div>
+  <form id="trackerForm" class="tracker-form">
+    <input id="company" placeholder="Company" required><input id="role" placeholder="Role" required>
+    <select id="status"><option>Applied</option><option>Screening</option><option>Interview</option><option>Offer</option><option>Rejected</option><option>Withdrawn</option></select>
+    <input id="dateApplied" type="date" required><button class="btn primary" type="submit">Add application</button>
+  </form>
+  <div class="tracker-toolbar"><span id="applicationCount">0 applications</span><button class="text-btn" id="clearApplications" type="button">Clear all</button></div>
+  <div id="applicationList" class="application-list"></div>
+</section>
+
+<section class="section" id="roadmap">
+  <div class="section-head"><span class="eyebrow">The full journey</span><h2>Your Life After Matric roadmap</h2><p>We’re building the entire journey in modules. Mark what matters to you now — your choices stay saved on this device.</p></div>
+  <div id="roadmapGrid" class="roadmap-grid"></div>
+</section>
+
+<section class="section footer-cta">
+  <span class="eyebrow">One thing at a time</span><h2>You don’t have to know how adulthood works before you start.</h2><p>Learn the next thing you need, make the next decision with better information, then keep going.</p><a class="btn primary" href="#start">Choose my next step</a>
+</section>
+</main>
+
+<footer><b>Life After Matric SA</b><p>Practical education for young South Africans. Information on this site is general education, not financial, legal, tax or employment advice.</p><p>© <span id="year"></span> Life After Matric SA</p></footer>
+<script src="app.js"></script>
+</body>
+</html>
