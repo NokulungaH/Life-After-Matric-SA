@@ -57,7 +57,8 @@ function calculateSalary(){
   const gross=Math.max(0,+$('grossSalary').value||0);
   const retirementPct=Math.min(27.5,Math.max(0,+$('retirementPct').value||0));
   const other=Math.max(0,+$('otherDeductions').value||0);
-  const retirement=gross*retirementPct/100;
+  const requestedRetirement=gross*retirementPct/100;
+  const retirement=Math.min(requestedRetirement,430000/12);
   const annualTaxable=Math.max(0,(gross-retirement)*12);
   const paye=Math.max(0,(annualTax(annualTaxable)-17820)/12);
   const uif=Math.min(gross,17712)*.01;
