@@ -1,14 +1,7 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Understand South African salaries, payslips, PAYE, UIF and estimated take-home pay.">
-  <title>Salary & Payslips | Life After Matric SA</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body data-page="salary">
-<header class="site-header">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Understand what your salary means before and after deductions, and learn how to read the document that proves what you were paid."><title>Salary & Payslips | Life After Matric SA</title><link rel="stylesheet" href="styles.css"></head>
+<body data-page="salary"><header class="site-header">
   <a class="brand" href="index.html" aria-label="Life After Matric SA home">
     <span class="brand-mark">LA</span><span>Life After Matric <b>SA</b></span>
   </a>
@@ -30,51 +23,26 @@
       </div>
     </div>
   </nav>
-</header>
-<main>
-
-<section class="page-hero">
-  <div class="breadcrumbs"><a href="index.html">Home</a><span>›</span><span>Salary & payslips</span></div>
-  <span class="eyebrow">Your first salary</span><h1>What will actually reach your bank account?</h1>
-  <p>Understand the difference between what you earn on paper and what arrives in your account.</p>
-</section>
-<section class="section page-content">
-  <div class="calc-wrap">
-    <form id="salaryForm" class="calc-card">
-      <label>Gross monthly salary (R)<input id="grossSalary" type="number" min="0" step="100" value="20000" required></label>
-      <label>Retirement contribution (%)<input id="retirementPct" type="number" min="0" max="27.5" step="0.5" value="0"></label>
-      <label>Other monthly deductions (R)<input id="otherDeductions" type="number" min="0" step="50" value="0"></label>
-      <button class="btn primary" type="submit">Calculate take-home pay</button>
-      <p class="fine">Nothing you enter here is saved. The calculation happens only in your browser.</p>
-      <p class="fine">Simplified estimate for a person under 65. Medical tax credits, fringe benefits, allowances and other circumstances are not included.</p>
-    </form>
-    <div class="result-card" aria-live="polite">
-      <p class="mini-label">Estimated monthly take-home</p><div class="big-number" id="netPay">R0</div>
-      <div class="money-row"><span>Gross salary</span><b id="grossOut">R0</b></div>
-      <div class="money-row"><span>Estimated PAYE</span><b id="payeOut">R0</b></div>
-      <div class="money-row"><span>Employee UIF</span><b id="uifOut">R0</b></div>
-      <div class="money-row"><span>Retirement contribution</span><b id="retirementOut">R0</b></div>
-      <div class="money-row"><span>Other deductions</span><b id="otherOut">R0</b></div>
-      <div class="explain" id="salaryExplain"></div>
-    </div>
+</header><main>
+<section class="page-hero"><div class="breadcrumbs"><a href="index.html">Home</a><span>›</span><span>Salary & Payslips</span></div><span class="eyebrow">Your pay, explained</span><h1>Salary & Payslips</h1><p>Understand what your salary means before and after deductions, and learn how to read the document that proves what you were paid.</p></section>
+<section class="section page-content"><div class="topic-directory"><a href="payslip.html"><span>🧾</span><div><b>Read a payslip</b><small>Learn the common sections and what each line means.</small></div><i>→</i></a><a href="paye-uif.html"><span>💸</span><div><b>PAYE & UIF</b><small>Understand why these deductions appear and who they are paid to.</small></div><i>→</i></a><a href="salary-deductions.html"><span>➖</span><div><b>Deductions & benefits</b><small>Retirement, medical aid, insurance and other payroll items.</small></div><i>→</i></a><a href="overtime-bonuses.html"><span>⏱️</span><div><b>Overtime, bonuses & leave</b><small>Know what extra pay and leave-related entries can look like.</small></div><i>→</i></a><a href="salary.html#calculator"><span>🧮</span><div><b>Salary calculator</b><small>Estimate monthly take-home pay using the current calculator.</small></div><i>→</i></a></div>
+<div class="calc-wrap" id="calculator">
+  <form id="salaryForm" class="calc-card">
+    <span class="eyebrow">Quick tool</span><h3>Estimate take-home pay</h3>
+    <label>Gross monthly salary (R)<input id="grossSalary" type="number" min="0" step="100" value="20000" required></label>
+    <label>Retirement contribution (%)<input id="retirementPct" type="number" min="0" max="27.5" step="0.5" value="0"></label>
+    <label>Other monthly deductions (R)<input id="otherDeductions" type="number" min="0" step="50" value="0"></label>
+    <button class="btn primary" type="submit">Calculate</button>
+    <p class="fine">Nothing entered is saved. Simplified estimate for a person under 65.</p>
+  </form>
+  <div class="result-card"><p class="mini-label">Estimated monthly take-home</p><div class="big-number" id="netPay">R0</div>
+    <div class="money-row"><span>Gross salary</span><b id="grossOut">R0</b></div><div class="money-row"><span>Estimated PAYE</span><b id="payeOut">R0</b></div><div class="money-row"><span>Employee UIF</span><b id="uifOut">R0</b></div><div class="money-row"><span>Retirement</span><b id="retirementOut">R0</b></div><div class="money-row"><span>Other deductions</span><b id="otherOut">R0</b></div><div class="explain" id="salaryExplain"></div>
   </div>
-  <div class="term-grid">
-    <article><b>Gross salary</b><p>Your pay before deductions.</p></article><article><b>PAYE</b><p>Employees’ tax your employer withholds and pays to SARS.</p></article><article><b>UIF</b><p>Most employees contribute 1% of remuneration, subject to the UIF earnings ceiling.</p></article><article><b>Net pay</b><p>What remains after deductions.</p></article>
-  </div>
-  <p class="source-note">Estimator basis: South African 2027 tax year (1 March 2026–28 February 2027). Official references: <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener">SARS individual tax rates</a> · <a href="https://www.sars.gov.za/types-of-tax/unemployment-insurance-fund/" target="_blank" rel="noopener">SARS UIF</a>. Last content review: September 2026.</p>
-  <div class="phase-note"><b>Next build on this page:</b> interactive payslip, overtime, bonuses, benefits, leave, retirement deductions and common payslip terms.</div>
-</section>
-<nav class="topic-pager" aria-label="Topic navigation">
-  <a class="pager-link prev" href="jobs.html"><small>← Previous topic</small><b>Jobs & applications</b></a>
-  <a class="pager-home" href="index.html">All topics</a>
-  <a class="pager-link next" href="tax.html"><small>Next topic →</small><b>SARS & tax</b></a>
-</nav>
-</main>
-<footer>
+</div>
+<p class="source-note">Estimator basis: South African 2027 tax year (1 March 2026–28 February 2027). Last content review: September 2026.</p></section>
+<nav class="topic-pager" aria-label="Topic navigation"><a class="pager-link prev" href="jobs.html"><small>← Previous topic</small><b>Jobs & applications</b></a><a class="pager-home" href="index.html">All topics</a><a class="pager-link next" href="tax.html"><small>Next topic →</small><b>SARS & tax</b></a></nav>
+</main><footer>
   <b>Life After Matric SA</b>
   <p>Practical education for young South Africans. Information on this site is general education, not financial, legal, tax or employment advice.</p>
   <p>© <span id="year"></span> Life After Matric SA</p>
-</footer>
-<script src="app.js"></script>
-</body>
-</html>
+</footer><script src="app.js"></script></body></html>
