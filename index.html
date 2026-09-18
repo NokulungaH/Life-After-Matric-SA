@@ -14,7 +14,7 @@
   </a>
   <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
   <nav id="mainNav">
-    <a href="#start">Start here</a><a href="#jobs">Jobs</a><a href="#salary">Salary</a><a href="#tracker">Tracker</a><a href="#roadmap">My roadmap</a>
+    <a href="#start">Start here</a><a href="#jobs">Jobs</a><a href="#salary">Salary</a><a href="#roadmap">Explore topics</a>
   </nav>
 </header>
 
@@ -25,7 +25,7 @@
     <h1>Life after school doesn’t come with instructions.</h1>
     <p class="hero-copy">We’re fixing that. Learn how salaries work, find a job, understand SARS, manage money, move out, buy a car and figure adulthood out — one step at a time.</p>
     <div class="actions"><a class="btn primary" href="#start">Show me where to start</a><a class="btn ghost" href="#salary">Try the salary calculator</a></div>
-    <div class="trust"><span>🇿🇦 Built for South Africa</span><span>🔒 No account required</span><span>💾 Progress stays on your device</span></div>
+    <div class="trust"><span>🇿🇦 Built for South Africa</span><span>🔓 No account required</span><span>📚 Informational and easy to explore</span></div>
   </div>
   <aside class="hero-card">
     <p class="mini-label">Your first-job reality check</p>
@@ -53,14 +53,21 @@
   <div class="section-head"><span class="eyebrow">Jobs & applications</span><h2>Getting into the working world</h2><p>Practical steps, not “just network” advice.</p></div>
   <div class="feature-grid">
     <article class="feature"><span>📄</span><h3>Build a strong CV</h3><p>Keep it clear, tailored and easy to scan. Lead with relevant skills, projects, qualifications and measurable outcomes.</p><ul><li>Use a professional email address</li><li>Tailor keywords to the job advert</li><li>Do not include unnecessary personal details</li><li>Proofread names, dates and contact details</li></ul></article>
-    <article class="feature"><span>📨</span><h3>Apply strategically</h3><p>Quality matters more than firing the same CV everywhere.</p><ul><li>Save the job description</li><li>Track the date and role</li><li>Follow instructions exactly</li><li>Follow up politely when appropriate</li></ul></article>
+    <article class="feature"><span>📨</span><h3>Apply strategically</h3><p>Quality matters more than firing the same CV everywhere.</p><ul><li>Save the job description for your own reference</li><li>Keep your own simple record of roles you applied for</li><li>Follow instructions exactly</li><li>Follow up politely when appropriate</li></ul></article>
     <article class="feature"><span>🎤</span><h3>Prepare for interviews</h3><p>Know your examples before you walk in.</p><ul><li>Prepare a 60-second introduction</li><li>Use STAR for experience questions</li><li>Research the company</li><li>Prepare two thoughtful questions</li></ul></article>
     <article class="feature warning"><span>🚨</span><h3>Spot job scams</h3><p>Be suspicious if a “recruiter” pressures you to pay for a job, sends vague offers, or asks for sensitive information too early.</p><p class="note">A legitimate hiring process should be verifiable. Pause and verify the company independently before sharing documents or money.</p></article>
   </div>
-  <div class="check-card">
+
+  <div class="info-card">
     <div><span class="eyebrow">First-job checklist</span><h3>Before your first day</h3></div>
-    <div id="jobChecklist" class="checklist"></div>
-    <p class="progress-text"><span id="checkProgress">0</span>% complete</p>
+    <div class="info-list">
+      <div>✓ Read and keep a copy of your employment contract</div>
+      <div>✓ Confirm your start date, working hours and location</div>
+      <div>✓ Ask when payroll cut-off and payday are</div>
+      <div>✓ Check what documents HR needs from you</div>
+      <div>✓ Understand which benefits or retirement deductions apply</div>
+      <div>✓ Check your first payslip line by line</div>
+    </div>
   </div>
 </section>
 
@@ -72,6 +79,7 @@
       <label>Retirement contribution (%)<input id="retirementPct" type="number" min="0" max="27.5" step="0.5" value="0"></label>
       <label>Other monthly deductions (R)<input id="otherDeductions" type="number" min="0" step="50" value="0"></label>
       <button class="btn primary" type="submit">Calculate take-home pay</button>
+      <p class="fine">Nothing you enter here is saved. The calculation happens only in your browser for this session.</p>
       <p class="fine">Simplified calculation for a person under 65. Medical tax credits, fringe benefits, allowances and other tax circumstances are not included.</p>
     </form>
     <div class="result-card" aria-live="polite">
@@ -94,20 +102,19 @@
   <p class="source-note">Official references: <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener">SARS individual tax rates</a> · <a href="https://www.sars.gov.za/types-of-tax/unemployment-insurance-fund/" target="_blank" rel="noopener">SARS UIF</a>. Last content review: September 2026.</p>
 </section>
 
-<section class="section alt" id="tracker">
-  <div class="section-head"><span class="eyebrow">Job application tracker</span><h2>Stop wondering, “Did I apply for that already?”</h2><p>Your entries are stored only in this browser unless you export them yourself.</p></div>
-  <form id="trackerForm" class="tracker-form">
-    <input id="company" placeholder="Company" required><input id="role" placeholder="Role" required>
-    <select id="status"><option>Applied</option><option>Screening</option><option>Interview</option><option>Offer</option><option>Rejected</option><option>Withdrawn</option></select>
-    <input id="dateApplied" type="date" required><button class="btn primary" type="submit">Add application</button>
-  </form>
-  <div class="tracker-toolbar"><span id="applicationCount">0 applications</span><button class="text-btn" id="clearApplications" type="button">Clear all</button></div>
-  <div id="applicationList" class="application-list"></div>
-</section>
-
-<section class="section" id="roadmap">
-  <div class="section-head"><span class="eyebrow">The full journey</span><h2>Your Life After Matric roadmap</h2><p>We’re building the entire journey in modules. Mark what matters to you now — your choices stay saved on this device.</p></div>
-  <div id="roadmapGrid" class="roadmap-grid"></div>
+<section class="section alt" id="roadmap">
+  <div class="section-head"><span class="eyebrow">Explore the full journey</span><h2>Life after matric has a lot of moving parts.</h2><p>These are the areas we’re building out across the site. Use them as a guide to what you may need to learn next.</p></div>
+  <div class="roadmap-grid">
+    <article class="roadmap-card"><b>🔎 Jobs & applications</b><small>CVs, applications, interviews, contracts and scams.</small></article>
+    <article class="roadmap-card"><b>💼 Salary & payslips</b><small>Gross vs net, PAYE, UIF and deductions.</small></article>
+    <article class="roadmap-card"><b>🧾 SARS & tax</b><small>Tax numbers, IRP5s, returns and assessments.</small></article>
+    <article class="roadmap-card"><b>💰 Money</b><small>Budgeting, emergency funds, credit, debt and saving.</small></article>
+    <article class="roadmap-card"><b>🏠 Moving out</b><small>Rent, deposits, leases and household costs.</small></article>
+    <article class="roadmap-card"><b>🚗 Cars</b><small>Finance, balloon payments, insurance and running costs.</small></article>
+    <article class="roadmap-card"><b>🎓 Education & career</b><small>University, TVET, learnerships, bursaries and upskilling.</small></article>
+    <article class="roadmap-card"><b>💡 Business & side hustles</b><small>CIPC, pricing, records, tax and profit basics.</small></article>
+    <article class="roadmap-card"><b>🗂️ Adulting admin</b><small>IDs, bank accounts, insurance, contracts and consumer basics.</small></article>
+  </div>
 </section>
 
 <section class="section footer-cta">
