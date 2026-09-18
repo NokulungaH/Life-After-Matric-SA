@@ -33,7 +33,7 @@ document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',(
 }));
 
 const page=document.body.dataset.page||'home';
-const groupMap={home:'home',jobs:'work',salary:'salary',tax:'tax',money:'money','moving-out':'living'};
+const groupMap={home:'home',jobs:'work',cv:'work',applications:'work',interviews:'work',contracts:'work','job-scams':'work','first-job':'work',salary:'salary',tax:'tax',money:'money','moving-out':'living'};
 const group=groupMap[page];
 if(group) document.querySelector('[data-nav="'+group+'"]')?.classList.add('active');
 
@@ -78,4 +78,10 @@ if($('salaryForm')){
   $('salaryForm').addEventListener('submit',e=>{e.preventDefault();calculateSalary()});
   ['grossSalary','retirementPct','otherDeductions'].forEach(id=>$(id)?.addEventListener('input',calculateSalary));
   calculateSalary();
+}
+const workPageMap={jobs:'jobs.html',cv:'cv.html',applications:'applications.html',interviews:'interviews.html',contracts:'contracts.html','job-scams':'job-scams.html','first-job':'first-job.html'};
+if(workPageMap[page]){
+  document.querySelectorAll('.section-nav a').forEach(a=>{
+    if(a.getAttribute('href')===workPageMap[page]) a.classList.add('active');
+  });
 }
