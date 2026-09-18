@@ -158,3 +158,18 @@ if($('bizCalc')){
     }
   });
 }
+
+
+// Add Meet the Examples to the global navigation on every page.
+if(nav && !nav.querySelector('[data-nav="examples"]')){
+  const examplesLink=document.createElement('a');
+  examplesLink.dataset.nav='examples';
+  examplesLink.href=page==='home' ? '#examples' : 'index.html#examples';
+  examplesLink.textContent='Meet the Examples';
+  const explore=nav.querySelector('.nav-dropdown');
+  nav.insertBefore(examplesLink, explore || null);
+  examplesLink.addEventListener('click',()=> {
+    nav.classList.remove('open');
+    menuBtn?.setAttribute('aria-expanded','false');
+  });
+}
