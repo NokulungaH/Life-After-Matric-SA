@@ -85,3 +85,76 @@ if(workPageMap[page]){
     if(a.getAttribute('href')===workPageMap[page]) a.classList.add('active');
   });
 }
+
+
+// Generic sub-navigation highlighting
+const currentFile=window.location.pathname.split('/').pop()||'index.html';
+document.querySelectorAll('.section-nav a').forEach(a=>{
+  if(a.getAttribute('href')===currentFile) a.classList.add('active');
+});
+
+const numberValue=id=>Math.max(0,Number(document.getElementById(id)?.value)||0);
+const moneyPlain=n=>new Intl.NumberFormat('en-ZA',{style:'currency',currency:'ZAR',maximumFractionDigits:2}).format(n);
+
+if($('budgetCalc')){
+  $('budgetCalc').addEventListener('click',()=>{
+    const income=numberValue('budgetIncome');
+    const spend=['budgetHousing','budgetTransport','budgetFood','budgetDebt','budgetOther'].reduce((s,id)=>s+numberValue(id),0);
+    const left=income-spend;
+    $('budgetResult').classList.toggle('negative',left<0);
+    $('budgetResult').innerHTML=left>=0
+      ?'<b>'+moneyPlain(left)+'</b> remains after the essentials entered above.'
+      :'<b>'+moneyPlain(Math.abs(left))+' short</b>. The listed essentials are higher than the take-home pay entered.';
+  });
+}
+
+if($('emergencyCalc')){
+  $('emergencyCalc').addEventListener('click',()=>{
+    const monthly=numberValue('emergencyMonthly'),months=Math.max(1,numberValue('emergencyMonths'));
+    $('emergencyResult').innerHTML='A '+months+'-month target would be about <b>'+moneyPlain(monthly*months)+'</b>. You can still start with a smaller first milestone.';
+  });
+}
+
+if($('moveCalc')){
+  $('moveCalc').addEventListener('click',()=>{
+    const income=numberValue('moveIncome');
+    const spend=['moveRent','moveTransport','moveFood','moveUtilities','moveOther'].reduce((s,id)=>s+numberValue(id),0);
+    const left=income-spend;
+    $('moveResult').classList.toggle('negative',left<0);
+    $('moveResult').innerHTML=left>=0
+      ?'After the monthly costs entered, about <b>'+moneyPlain(left)+'</b> remains for saving, unexpected costs and flexible spending.'
+      :'The costs entered are about <b>'+moneyPlain(Math.abs(left))+'</b> more than the take-home pay entered.';
+  });
+}
+
+if($('carCalc')){
+  $('carCalc').addEventListener('click',()=>{
+    const price=numberValue('carPrice'),deposit=numberValue('carDeposit'),rate=numberValue('carRate')/100/12,months=Math.max(1,numberValue('carTerm')),balloonPct=Math.min(50,numberValue('carBalloon'))/100;
+    const principal=Math.max(0,price-deposit),balloon=price*balloonPct;
+    let instalment=0;
+    if(rate===0){instalment=Math.max(0,(principal-balloon)/months)}
+    else{
+      const pvBalloon=balloon/Math.pow(1+rate,months);
+      const financedForPayments=Math.max(0,principal-pvBalloon);
+      instalment=financedForPayments*rate/(1-Math.pow(1+rate,-months));
+    }
+    const monthly=instalment+numberValue('carInsurance')+numberValue('carFuel')+numberValue('carOther');
+    $('carResult').innerHTML='Estimated finance instalment: <b>'+moneyPlain(instalment)+'</b><br>Estimated total monthly ownership cost entered: <b>'+moneyPlain(monthly)+'</b>'+(balloon>0?'<br>Estimated balloon remaining at term end: <b>'+moneyPlain(balloon)+'</b>':'');
+  });
+}
+
+if($('bizCalc')){
+  $('bizCalc').addEventListener('click',()=>{
+    const price=numberValue('bizPrice'),cost=numberValue('bizCost'),fees=numberValue('bizFees'),fixed=numberValue('bizFixed');
+    const contribution=price-cost-fees;
+    const margin=price>0?contribution/price*100:0;
+    if(contribution<=0){
+      $('bizResult').classList.add('negative');
+      $('bizResult').innerHTML='This price does not leave a positive unit contribution after the costs entered.';
+    } else {
+      $('bizResult').classList.remove('negative');
+      const units=Math.ceil(fixed/contribution);
+      $('bizResult').innerHTML='Estimated unit contribution: <b>'+moneyPlain(contribution)+'</b> ('+margin.toFixed(1)+'% of selling price).<br>Approximate units to cover '+moneyPlain(fixed)+' fixed monthly costs: <b>'+units+'</b>.';
+    }
+  });
+}
