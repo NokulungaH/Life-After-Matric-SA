@@ -7,122 +7,88 @@
   <title>Life After Matric SA</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="home">
 <header class="site-header">
-  <a class="brand" href="#home" aria-label="Life After Matric SA home">
+  <a class="brand" href="index.html" aria-label="Life After Matric SA home">
     <span class="brand-mark">LA</span><span>Life After Matric <b>SA</b></span>
   </a>
   <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
-  <nav id="mainNav">
-    <a href="#start">Start here</a><a href="#jobs">Jobs</a><a href="#salary">Salary</a><a href="#roadmap">Explore topics</a>
+  <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+    <a data-nav="home" href="index.html">Home</a>
+    <a data-nav="work" href="jobs.html">Work</a>
+    <a data-nav="salary" href="salary.html">Salary</a>
+    <a data-nav="tax" href="tax.html">Tax</a>
+    <a data-nav="money" href="money.html">Money</a>
+    <a data-nav="living" href="moving-out.html">Living</a>
+    <div class="nav-dropdown">
+      <button class="nav-more" id="moreBtn" type="button" aria-expanded="false" aria-controls="moreMenu">Explore <span aria-hidden="true">▾</span></button>
+      <div class="more-menu" id="moreMenu">
+        <a data-page-link="cars" href="cars.html">Cars</a>
+        <a data-page-link="education" href="education-career.html">Education & career</a>
+        <a data-page-link="business" href="business.html">Business & side hustles</a>
+        <a data-page-link="adulting" href="adulting.html">Adulting admin</a>
+      </div>
+    </div>
   </nav>
 </header>
-
 <main>
-<section class="hero" id="home">
+<section class="hero">
   <div>
     <span class="eyebrow">Practical life skills for South Africans</span>
     <h1>Life after school doesn’t come with instructions.</h1>
-    <p class="hero-copy">We’re fixing that. Learn how salaries work, find a job, understand SARS, manage money, move out, buy a car and figure adulthood out — one step at a time.</p>
-    <div class="actions"><a class="btn primary" href="#start">Show me where to start</a><a class="btn ghost" href="#salary">Try the salary calculator</a></div>
+    <p class="hero-copy">We’re fixing that. Learn how salaries work, find a job, understand SARS, manage money, move out, buy a car and figure adulthood out — one topic at a time.</p>
+    <div class="actions"><a class="btn primary" href="#start">Show me where to start</a><a class="btn ghost" href="salary.html">Try the salary calculator</a></div>
     <div class="trust"><span>🇿🇦 Built for South Africa</span><span>🔓 No account required</span><span>📚 Informational and easy to explore</span></div>
   </div>
   <aside class="hero-card">
     <p class="mini-label">Your first-job reality check</p>
     <h2>R20 000 salary ≠ R20 000 in your bank.</h2>
     <p>PAYE, UIF and other deductions can change your take-home pay. We explain each line in plain English.</p>
-    <a href="#salary">Calculate your take-home →</a>
+    <a href="salary.html">Understand your salary →</a>
   </aside>
 </section>
 
 <section class="section" id="start">
-  <div class="section-head"><span class="eyebrow">Start with your situation</span><h2>Where are you right now?</h2><p>You do not need to read this site from beginning to end. Pick what sounds most like you.</p></div>
+  <div class="section-head"><span class="eyebrow">Start with your situation</span><h2>Where are you right now?</h2><p>Pick what sounds most like you. Each area now has its own page so the site can grow without becoming overwhelming.</p></div>
   <div class="journey-grid">
-    <button class="journey" data-go="jobs"><span>🎓</span><b>I just finished matric</b><small>Options, applications and next steps</small></button>
-    <button class="journey" data-go="jobs"><span>🎓</span><b>I just graduated</b><small>Turn the qualification into opportunities</small></button>
-    <button class="journey" data-go="jobs"><span>🔎</span><b>I’m looking for work</b><small>CVs, applications, interviews and scams</small></button>
-    <button class="journey" data-go="salary"><span>💼</span><b>I got my first job</b><small>Contracts, payslips, PAYE and UIF</small></button>
-    <button class="journey" data-go="roadmap"><span>💰</span><b>I want to understand money</b><small>Budgeting, credit and saving</small></button>
-    <button class="journey" data-go="roadmap"><span>🏠</span><b>I want to move out</b><small>Rent, deposits and living costs</small></button>
-    <button class="journey" data-go="roadmap"><span>🚗</span><b>I want to buy a car</b><small>Finance, insurance and real ownership cost</small></button>
-    <button class="journey" data-go="roadmap"><span>🧭</span><b>I have no idea what I’m doing</b><small>That’s a valid place to start</small></button>
+    <a class="journey" href="education-career.html"><span>🎓</span><b>I just finished matric</b><small>Study, training and next-step options</small></a>
+    <a class="journey" href="jobs.html"><span>🎓</span><b>I just graduated</b><small>Turn the qualification into opportunities</small></a>
+    <a class="journey" href="jobs.html"><span>🔎</span><b>I’m looking for work</b><small>CVs, applications, interviews and scams</small></a>
+    <a class="journey" href="salary.html"><span>💼</span><b>I got my first job</b><small>Contracts, payslips, PAYE and UIF</small></a>
+    <a class="journey" href="money.html"><span>💰</span><b>I want to understand money</b><small>Budgeting, credit and saving</small></a>
+    <a class="journey" href="moving-out.html"><span>🏠</span><b>I want to move out</b><small>Rent, deposits and living costs</small></a>
+    <a class="journey" href="cars.html"><span>🚗</span><b>I want to buy a car</b><small>Finance, insurance and ownership costs</small></a>
+    <a class="journey" href="#topics"><span>🧭</span><b>I have no idea what I’m doing</b><small>Browse all the topics below</small></a>
   </div>
 </section>
 
-<section class="section alt" id="jobs">
-  <div class="section-head"><span class="eyebrow">Jobs & applications</span><h2>Getting into the working world</h2><p>Practical steps, not “just network” advice.</p></div>
-  <div class="feature-grid">
-    <article class="feature"><span>📄</span><h3>Build a strong CV</h3><p>Keep it clear, tailored and easy to scan. Lead with relevant skills, projects, qualifications and measurable outcomes.</p><ul><li>Use a professional email address</li><li>Tailor keywords to the job advert</li><li>Do not include unnecessary personal details</li><li>Proofread names, dates and contact details</li></ul></article>
-    <article class="feature"><span>📨</span><h3>Apply strategically</h3><p>Quality matters more than firing the same CV everywhere.</p><ul><li>Save the job description for your own reference</li><li>Keep your own simple record of roles you applied for</li><li>Follow instructions exactly</li><li>Follow up politely when appropriate</li></ul></article>
-    <article class="feature"><span>🎤</span><h3>Prepare for interviews</h3><p>Know your examples before you walk in.</p><ul><li>Prepare a 60-second introduction</li><li>Use STAR for experience questions</li><li>Research the company</li><li>Prepare two thoughtful questions</li></ul></article>
-    <article class="feature warning"><span>🚨</span><h3>Spot job scams</h3><p>Be suspicious if a “recruiter” pressures you to pay for a job, sends vague offers, or asks for sensitive information too early.</p><p class="note">A legitimate hiring process should be verifiable. Pause and verify the company independently before sharing documents or money.</p></article>
-  </div>
-
-  <div class="info-card">
-    <div><span class="eyebrow">First-job checklist</span><h3>Before your first day</h3></div>
-    <div class="info-list">
-      <div>✓ Read and keep a copy of your employment contract</div>
-      <div>✓ Confirm your start date, working hours and location</div>
-      <div>✓ Ask when payroll cut-off and payday are</div>
-      <div>✓ Check what documents HR needs from you</div>
-      <div>✓ Understand which benefits or retirement deductions apply</div>
-      <div>✓ Check your first payslip line by line</div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="salary">
-  <div class="section-head"><span class="eyebrow">Salary & payslips</span><h2>What will actually reach your bank account?</h2><p>This estimator uses the South African 2027 tax year (1 March 2026–28 February 2027) individual tax brackets and primary rebate. It is an educational estimate, not payroll or tax advice.</p></div>
-  <div class="calc-wrap">
-    <form id="salaryForm" class="calc-card">
-      <label>Gross monthly salary (R)<input id="grossSalary" type="number" min="0" step="100" value="20000" required></label>
-      <label>Retirement contribution (%)<input id="retirementPct" type="number" min="0" max="27.5" step="0.5" value="0"></label>
-      <label>Other monthly deductions (R)<input id="otherDeductions" type="number" min="0" step="50" value="0"></label>
-      <button class="btn primary" type="submit">Calculate take-home pay</button>
-      <p class="fine">Nothing you enter here is saved. The calculation happens only in your browser for this session.</p>
-      <p class="fine">Simplified calculation for a person under 65. Medical tax credits, fringe benefits, allowances and other tax circumstances are not included.</p>
-    </form>
-    <div class="result-card" aria-live="polite">
-      <p class="mini-label">Estimated monthly take-home</p>
-      <div class="big-number" id="netPay">R0</div>
-      <div class="money-row"><span>Gross salary</span><b id="grossOut">R0</b></div>
-      <div class="money-row"><span>Estimated PAYE</span><b id="payeOut">R0</b></div>
-      <div class="money-row"><span>Employee UIF</span><b id="uifOut">R0</b></div>
-      <div class="money-row"><span>Retirement contribution</span><b id="retirementOut">R0</b></div>
-      <div class="money-row"><span>Other deductions</span><b id="otherOut">R0</b></div>
-      <div class="explain" id="salaryExplain"></div>
-    </div>
-  </div>
-  <div class="term-grid">
-    <article><b>Gross salary</b><p>Your pay before deductions.</p></article>
-    <article><b>PAYE</b><p>Employees’ tax your employer withholds and pays to SARS.</p></article>
-    <article><b>UIF</b><p>Most employees contribute 1% of remuneration, subject to the UIF earnings ceiling.</p></article>
-    <article><b>Net pay</b><p>What remains after the deductions included in this estimate.</p></article>
-  </div>
-  <p class="source-note">Official references: <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener">SARS individual tax rates</a> · <a href="https://www.sars.gov.za/types-of-tax/unemployment-insurance-fund/" target="_blank" rel="noopener">SARS UIF</a>. Last content review: September 2026.</p>
-</section>
-
-<section class="section alt" id="roadmap">
-  <div class="section-head"><span class="eyebrow">Explore the full journey</span><h2>Life after matric has a lot of moving parts.</h2><p>These are the areas we’re building out across the site. Use them as a guide to what you may need to learn next.</p></div>
-  <div class="roadmap-grid">
-    <article class="roadmap-card"><b>🔎 Jobs & applications</b><small>CVs, applications, interviews, contracts and scams.</small></article>
-    <article class="roadmap-card"><b>💼 Salary & payslips</b><small>Gross vs net, PAYE, UIF and deductions.</small></article>
-    <article class="roadmap-card"><b>🧾 SARS & tax</b><small>Tax numbers, IRP5s, returns and assessments.</small></article>
-    <article class="roadmap-card"><b>💰 Money</b><small>Budgeting, emergency funds, credit, debt and saving.</small></article>
-    <article class="roadmap-card"><b>🏠 Moving out</b><small>Rent, deposits, leases and household costs.</small></article>
-    <article class="roadmap-card"><b>🚗 Cars</b><small>Finance, balloon payments, insurance and running costs.</small></article>
-    <article class="roadmap-card"><b>🎓 Education & career</b><small>University, TVET, learnerships, bursaries and upskilling.</small></article>
-    <article class="roadmap-card"><b>💡 Business & side hustles</b><small>CIPC, pricing, records, tax and profit basics.</small></article>
-    <article class="roadmap-card"><b>🗂️ Adulting admin</b><small>IDs, bank accounts, insurance, contracts and consumer basics.</small></article>
+<section class="section alt" id="topics">
+  <div class="section-head"><span class="eyebrow">Explore the full journey</span><h2>Everything has a home now.</h2><p>The homepage is your starting point. Detailed guidance and tools live on dedicated pages.</p></div>
+  <div class="topic-directory">
+    <a href="jobs.html"><span>🔎</span><div><b>Jobs & applications</b><small>CVs, applications, interviews, contracts and scams.</small></div><i>→</i></a>
+    <a href="salary.html"><span>💼</span><div><b>Salary & payslips</b><small>Gross vs net, PAYE, UIF and deductions.</small></div><i>→</i></a>
+    <a href="tax.html"><span>🧾</span><div><b>SARS & tax</b><small>Tax numbers, IRP5s, returns and assessments.</small></div><i>→</i></a>
+    <a href="money.html"><span>💰</span><div><b>Money</b><small>Budgeting, emergency funds, credit, debt and saving.</small></div><i>→</i></a>
+    <a href="moving-out.html"><span>🏠</span><div><b>Moving out</b><small>Rent, deposits, leases and household costs.</small></div><i>→</i></a>
+    <a href="cars.html"><span>🚗</span><div><b>Cars</b><small>Finance, balloon payments, insurance and running costs.</small></div><i>→</i></a>
+    <a href="education-career.html"><span>🎓</span><div><b>Education & career</b><small>University, TVET, learnerships, bursaries and upskilling.</small></div><i>→</i></a>
+    <a href="business.html"><span>💡</span><div><b>Business & side hustles</b><small>CIPC, pricing, records, tax and profit basics.</small></div><i>→</i></a>
+    <a href="adulting.html"><span>🗂️</span><div><b>Adulting admin</b><small>IDs, bank accounts, insurance, contracts and consumer basics.</small></div><i>→</i></a>
   </div>
 </section>
 
 <section class="section footer-cta">
-  <span class="eyebrow">One thing at a time</span><h2>You don’t have to know how adulthood works before you start.</h2><p>Learn the next thing you need, make the next decision with better information, then keep going.</p><a class="btn primary" href="#start">Choose my next step</a>
+  <span class="eyebrow">One thing at a time</span>
+  <h2>You don’t have to know how adulthood works before you start.</h2>
+  <p>Find the next thing you need to understand, learn it in plain language, and move forward from there.</p>
+  <a class="btn primary" href="#topics">Browse all topics</a>
 </section>
 </main>
-
-<footer><b>Life After Matric SA</b><p>Practical education for young South Africans. Information on this site is general education, not financial, legal, tax or employment advice.</p><p>© <span id="year"></span> Life After Matric SA</p></footer>
+<footer>
+  <b>Life After Matric SA</b>
+  <p>Practical education for young South Africans. Information on this site is general education, not financial, legal, tax or employment advice.</p>
+  <p>© <span id="year"></span> Life After Matric SA</p>
+</footer>
 <script src="app.js"></script>
 </body>
 </html>
